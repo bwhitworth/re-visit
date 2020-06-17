@@ -1,0 +1,90 @@
+{
+  "memory1": {
+    "tripId": "trip1",
+    "categoryId": "category1",
+    "name": "Russell House",
+    "location": "Cambridge",
+    "date": "08/03/2019",
+    "imageUrl": "",
+    "notes": "Drinks at the bar.  BEST Bloody Mary EVER (pickle). Embarrassing guy who spilled his drink.",
+    "isFavorite": false,
+    "uid": "myUID"
+  },
+  "memory2": {
+    "tripId": "trip1",
+    "categoryId": "category2",
+    "name": "Inman Oasis",
+    "location": "Cambridge",
+    "date": "08/03/2019",
+    "imageUrl": "",
+    "notes": "45 mins hot tub that was too hot, hippies, EO soap",
+    "isFavorite": false,
+    "uid": "myUID"
+  },
+  "memory3": {
+    "tripId": "trip1",
+    "categoryId": "category1",
+    "name": "Meadhall",
+    "location": "Kendall Square",
+    "date": "08/02/2019",
+    "imageUrl": "",
+    "notes": "HUGE plate of poutine fries, great sour beer",
+    "isFavorite": false,
+    "uid": "myUID"
+  },
+  "memory4": {
+    "tripId": "trip1",
+    "categoryId": "category4",
+    "name": "Walking Around Inman Square",
+    "location": "Inman Square",
+    "date": "08/03/2019",
+    "imageUrl": "",
+    "notes": "Too hot after Inman Oasis hot tub, so we walked around and looked at stuff. Saw that guy steal from CVS.",
+    "isFavorite": false,
+    "uid": "myUID"
+  },
+  "memory5": {
+    "tripId": "trip2",
+    "categoryId": "category1",
+    "name": "The Drunken Taco",
+    "location": "beachfront",
+    "date": "12/26/2019",
+    "imageUrl": "",
+    "notes": "\"House of 301 Tequilas\", here almost every day for jumbo margaritas and people watching",
+    "isFavorite": false,
+    "uid": "myUID"
+  },
+  "memory6": {
+    "tripId": "trip3",
+    "categoryId": "category3",
+    "name": "Big Old Hotel",
+    "location": "Vegas Strip",
+    "date": "12/31/2017",
+    "imageUrl": "https://www.lasvegas.com/media/slideshows/hotels/parislv/xlg_paris-1-exterior.jpg.pagespeed.ic.kCWwES8fZM.jpg",
+    "notes": "Our hotel <3",
+    "isFavorite": false,
+    "uid": "12345"
+  },
+  "memory7": {
+    "tripId": "trip3",
+    "categoryId": "category1",
+    "name": "Sushi Place",
+    "location": "Vegas Strip",
+    "date": "01/02/2018",
+    "imageUrl": "",
+    "notes": "it was gross but we ate it anyway",
+    "isFavorite": false,
+    "uid": "12345"
+  },
+  "memory8": {
+    "tripId": "trip2",
+    "categoryId": "category3",
+    "name": "Inman Oasis",
+    "location": "Inman Square",
+    "date": "08/03/2019",
+    "imageUrl": "https://patch.com/img/cdn/users/38168/2011/03/raw/d06e280983e866170d17bf1a3ced509b.jpg?width=695",
+    "notes": "hottest tub on Earth...",
+    "isFavorite": false,
+    "uid": "myUID"
+  }
+}
