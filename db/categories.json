@@ -1,0 +1,14 @@
+{
+  "category1": {
+    "name": "Food & Drink"
+  },
+  "category2": {
+    "name": "Adventures"
+  },
+  "category3": {
+    "name": "Photos"
+  },
+  "category4": {
+    "name": "Note"
+  }
+}

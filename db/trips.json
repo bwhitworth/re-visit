@@ -1,0 +1,20 @@
+{
+  "trip1": {
+    "name": "Massachussetts",
+    "startDate": "08/02/2019",
+    "endDate": "08/06/2019",
+    "uid": "myUID"
+  },
+  "trip2": {
+    "name": "Fort Lauderdale",
+    "startDate": "12/26/2019",
+    "endDate": "12/31/2019",
+    "uid": "myUID"
+  },
+  "trip3": {
+    "name": "Vegas",
+    "startDate": "12/31/2017",
+    "endDate": "01/04/2018",
+    "uid": "12345"
+  }
+}
