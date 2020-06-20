@@ -42,10 +42,10 @@ class ThisNavbar extends React.Component {
         return (
           <Nav className="ml-auto" navbar>
             <NavItem>
-              <NavLink tag={RRNavLink} to='/trips'><i class="far fa-compass"></i> Trips</NavLink>
+              <NavLink tag={RRNavLink} to='/trips'><i className="far fa-compass"></i> Trips</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink tag={RRNavLink} to='/newTrip'><i class="fas fa-map-pin"></i> New Trip</NavLink>
+              <NavLink tag={RRNavLink} to='/trips/new'><i className="fas fa-map-pin"></i> New Trip</NavLink>
             </NavItem>
           </Nav>
         );
