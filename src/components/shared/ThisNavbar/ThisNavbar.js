@@ -1,20 +1,66 @@
 import React from 'react';
+import { NavLink as RRNavLink } from 'react-router-dom';
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+} from 'reactstrap';
+import PropTypes from 'prop-types';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 
 import './ThisNavbar.scss';
 
 class ThisNavbar extends React.Component {
+  static propTypes = {
+    authed: PropTypes.bool.isRequired,
+  }
+
+  state = {
+    isOpen: false,
+  }
+
   logUserOut = (e) => {
     e.preventDefault();
     firebase.auth().signOut();
   }
 
+  toggle = () => {
+    this.setState({ isOpen: !this.state.isOpen });
+  }
+
   render() {
+    const { isOpen } = this.state;
+
+    const buildNavbar = () => {
+      const { authed } = this.props;
+      if (authed) {
+        return (
+          <Nav className="ml-auto" navbar>
+            <NavItem>
+              <NavLink tag={RRNavLink} to='/trips'><i className="far fa-compass"></i> Trips</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink tag={RRNavLink} to='/trips/new'><i className="fas fa-map-pin"></i> New Trip</NavLink>
+            </NavItem>
+          </Nav>
+        );
+      }
+      return <Nav className="ml-auto" navbar></Nav>;
+    };
     return (
       <div className="ThisNavbar">
-        <h1>Navbar goes here</h1>
-        <button className="btn btn-secondary" onClick={this.logUserOut}>Logout</button>
+       <Navbar color="success" light expand="sm">
+         <NavbarBrand href="/">RE:visit</NavbarBrand>
+        <NavbarToggler onClick={this.toggle} />
+        <Collapse isOpen={isOpen} navbar>
+        {buildNavbar()}
+        </Collapse>
+       </Navbar>
       </div>
     );
   }
