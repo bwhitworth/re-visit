@@ -20,9 +20,10 @@ class SingleMemory extends React.Component {
     const { memory } = this.state;
     const singleTripLink = `/trips/${memory.tripId}`;
     return (
-      <div className="SingleMemory">
+      <div className="SingleMemory col-12">
         <h3>{memory.name}</h3>
-        <h3>{memory.date}</h3>
+        <p>{memory.location} - {memory.date}</p>
+        <p>{memory.notes}</p>
         <Link to={singleTripLink}>Go Back</Link>
       </div>
     );
