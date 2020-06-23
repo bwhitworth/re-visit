@@ -37,9 +37,14 @@ class NewMemory extends React.Component {
     this.setState({ memoryLocation: e.target.value });
   }
 
-  categoryChange = (e) => {
-    e.preventDefault();
-    this.setState({ memoryCategoryId: e.target.checked });
+  categoryChange = () => {
+    const categoryButtons = document.getElementsByName('category');
+    for (let i = 0, { length } = categoryButtons; i < length; i += 1) {
+      if (categoryButtons[i].checked) {
+        const selectedCategory = categoryButtons[i].id;
+        this.setState({ memoryCategoryId: selectedCategory });
+      }
+    }
   }
 
   notesChange = (e) => {
@@ -83,9 +88,7 @@ class NewMemory extends React.Component {
       memoryName,
       memoryDate,
       memoryLocation,
-      memoryCategoryId,
       memoryNotes,
-      memoryTripId,
       // categories,
     } = this.state;
 
@@ -98,17 +101,18 @@ class NewMemory extends React.Component {
         <input type="text" placeholder="Rockclimbing, Tiki Bar, etc..." className="form-control" id="memory-name" value={memoryName} onChange={this.nameChange} aria-describedby="memNameHelp"/>
       </div>
 
-      <div className="form-check">
-        <input className="form-check-input" type="radio" name="exampleRadios" id="memoryCategoryId" checked="category1" onChange={this.categoryChange}/>
-        <label className="form-check-label" for="FoodDrink">
-          Food & Drink
-        </label>
-      </div>
-      <div className="form-check">
-        <input className="form-check-input" type="radio" name="exampleRadios" id="memoryCategoryId" checked="category2" onChange={this.categoryChange}/>
-        <label className="form-check-label" for="FoodDrink">
-          Adventure
-        </label>
+      <div className="form-check row" for="category">
+        <input className="form-check-input" type="radio" name="category" id="category1" onChange={this.categoryChange}/>
+        <label className="form-check-label" for="FoodDrink">Food & Drink</label>
+      </div><div className="form-check row" for="category">
+        <input className="form-check-input" type="radio" name="category" id="category2" onChange={this.categoryChange}/>
+        <label className="form-check-label" for="Adventure">Adventure</label>
+        </div><div className="form-check row" for="category">
+        <input className="form-check-input" type="radio" name="category" id="category3" onChange={this.categoryChange}/>
+        <label className="form-check-label" for="Adventure">Photo</label>
+        </div><div className="form-check row" for="category">
+        <input className="form-check-input" type="radio" name="category" id="category4" onChange={this.categoryChange}/>
+        <label className="form-check-label" for="Adventure">Note</label>
       </div>
 
       <div className="form-group">
@@ -125,7 +129,7 @@ class NewMemory extends React.Component {
         <input type="text" placeholder="This was awesome because..." className="form-control" id="memory-notes" value={memoryNotes} onChange={this.notesChange} aria-describedby="memNotesHelp"/>
       </div>
 
-      <button type="submit" className="btn btn-primary" onClick={this.saveMemory}>Submit</button>
+      <button type="submit" className="btn btn-primary" onClick={this.saveMemory}>Save</button>
     </form>
       </div>
     );

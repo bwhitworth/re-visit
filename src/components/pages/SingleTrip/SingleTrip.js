@@ -26,7 +26,7 @@ class SingleTrip extends React.Component {
   render() {
     const { trip, memories } = this.state;
     const buildMemories = memories.map((mem) => (
-        <MemoryCard key={mem.id} memory={mem}/>
+        <MemoryCard key={mem.id} memory={mem} tripId={trip}/>
     ));
     const newMemoryLink = '/memories/new';
     return (
