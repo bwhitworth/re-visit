@@ -28,7 +28,7 @@ class SingleTrip extends React.Component {
       <MemoryCard key={mem.id} memory={mem}/>
     ));
     return (
-      <div className="SingleTrip">
+      <div className="SingleTrip col-12">
       <h3>{trip.name}</h3>
       <div className="container">
         {buildMemories}
