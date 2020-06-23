@@ -21,4 +21,6 @@ const getMemoriesByTripId = (tripId) => new Promise((resolve, reject) => {
 
 const getSingleMemory = (memoryId) => axios.get(`${baseUrl}/memories/${memoryId}.json`);
 
-export default { getMemoriesByTripId, getSingleMemory };
+const postNewMemory = (newMemory) => axios.post(`${baseUrl}/memories.json`, newMemory);
+
+export default { getMemoriesByTripId, getSingleMemory, postNewMemory };
