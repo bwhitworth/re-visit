@@ -23,4 +23,23 @@ const getSingleMemory = (memoryId) => axios.get(`${baseUrl}/memories/${memoryId}
 
 const postNewMemory = (newMemory) => axios.post(`${baseUrl}/memories.json`, newMemory);
 
-export default { getMemoriesByTripId, getSingleMemory, postNewMemory };
+const deleteMemoriesByTripId = (tripId) => new Promise((resolve, reject) => {
+  axios.get(`${baseUrl}/memories.json?orderBy="tripId"&equalTo="${tripId}"`)
+    .then((response) => {
+      const memories = response.data;
+      if (memories) {
+        Object.keys(memories).forEach((mem) => {
+          axios.delete(`${baseUrl}/memories/${mem}.json`);
+        });
+      }
+      resolve();
+    })
+    .catch((err) => reject(err));
+});
+
+export default {
+  getMemoriesByTripId,
+  getSingleMemory,
+  postNewMemory,
+  deleteMemoriesByTripId,
+};

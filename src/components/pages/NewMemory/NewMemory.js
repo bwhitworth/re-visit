@@ -78,7 +78,7 @@ class NewMemory extends React.Component {
     };
 
     memoriesData.postNewMemory(newMemory)
-      .then(() => this.props.history.push('/trips'))
+      .then(() => this.props.history.push(`/trips/${this.props.location.tripId}`))
       .catch((err) => console.error('could not post new memory:', err));
   };
 
@@ -111,7 +111,7 @@ class NewMemory extends React.Component {
         <label className="form-check-label" htmlFor="Adventure">Photo</label>
         </div><div className="form-check row" htmlFor="category">
         <input className="form-check-input" type="radio" name="category" id="category4" onChange={this.categoryChange}/>
-        <label className="form-check-label" fhtmlForor="Adventure">Note</label>
+        <label className="form-check-label" htmlFor="Adventure">Note</label>
       </div>
 
       <div className="form-group">
