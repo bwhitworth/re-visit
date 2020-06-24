@@ -12,8 +12,8 @@ class NewMemory extends React.Component {
     memoryLocation: '',
     memoryCategoryId: '',
     memoryNotes: '',
-    memoryTripId: '',
-    categories: [],
+    memoryTripId: this.props.location.state.memoryTripId,
+    // categories: [],
   }
 
   // componentDidMount() {
@@ -101,18 +101,18 @@ class NewMemory extends React.Component {
         <input type="text" placeholder="Rockclimbing, Tiki Bar, etc..." className="form-control" id="memory-name" value={memoryName} onChange={this.nameChange} aria-describedby="memNameHelp"/>
       </div>
 
-      <div className="form-check row" for="category">
+      <div className="form-check row" htmlFor="category">
         <input className="form-check-input" type="radio" name="category" id="category1" onChange={this.categoryChange}/>
-        <label className="form-check-label" for="FoodDrink">Food & Drink</label>
-      </div><div className="form-check row" for="category">
+        <label className="form-check-label" htmlFor="FoodDrink">Food & Drink</label>
+      </div><div className="form-check row" htmlFor="category">
         <input className="form-check-input" type="radio" name="category" id="category2" onChange={this.categoryChange}/>
-        <label className="form-check-label" for="Adventure">Adventure</label>
-        </div><div className="form-check row" for="category">
+        <label className="form-check-label" htmlFor="Adventure">Adventure</label>
+        </div><div className="form-check row" htmlFor="category">
         <input className="form-check-input" type="radio" name="category" id="category3" onChange={this.categoryChange}/>
-        <label className="form-check-label" for="Adventure">Photo</label>
-        </div><div className="form-check row" for="category">
+        <label className="form-check-label" htmlFor="Adventure">Photo</label>
+        </div><div className="form-check row" htmlFor="category">
         <input className="form-check-input" type="radio" name="category" id="category4" onChange={this.categoryChange}/>
-        <label className="form-check-label" for="Adventure">Note</label>
+        <label className="form-check-label" fhtmlForor="Adventure">Note</label>
       </div>
 
       <div className="form-group">
