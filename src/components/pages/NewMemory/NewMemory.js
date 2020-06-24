@@ -108,10 +108,10 @@ class NewMemory extends React.Component {
         <label className="form-check-label" htmlFor="Adventure">Adventure</label>
         </div><div className="form-check row" htmlFor="category">
         <input className="form-check-input" type="radio" name="category" id="category3" onChange={this.categoryChange}/>
-        <label className="form-check-label" htmlFor="Adventure">Photo</label>
+        <label className="form-check-label" htmlFor="Photo">Photo</label>
         </div><div className="form-check row" htmlFor="category">
         <input className="form-check-input" type="radio" name="category" id="category4" onChange={this.categoryChange}/>
-        <label className="form-check-label" htmlFor="Adventure">Note</label>
+        <label className="form-check-label" htmlFor="Note">Note</label>
       </div>
 
       <div className="form-group">
