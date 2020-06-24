@@ -16,6 +16,16 @@ class SingleMemory extends React.Component {
       .catch((err) => console.error('could not get single memory:', err));
   }
 
+  deleteMemory = () => {
+    const memoryForDelete = this.props.match.params.memoryId;
+    const parentTripId = this.state.memory.tripId;
+    memoriesData.deleteSingleMemory(memoryForDelete)
+      .then(() => {
+        this.props.history.push(`/trips/${parentTripId}`);
+      })
+      .catch((err) => console.error('could not delete this memory:', err));
+  };
+
   render() {
     const { memory } = this.state;
     const singleTripLink = `/trips/${memory.tripId}`;
@@ -24,7 +34,8 @@ class SingleMemory extends React.Component {
         <h3>{memory.name}</h3>
         <p>{memory.location} - {memory.date}</p>
         <p>{memory.notes}</p>
-        <Link to={singleTripLink}>Go Back</Link>
+        <Link className="btn btn-primary" to={singleTripLink}>Go Back</Link>
+        <button className="btn btn-secondary" onClick={this.deleteMemory}>Delete This Memory</button>
       </div>
     );
   }
