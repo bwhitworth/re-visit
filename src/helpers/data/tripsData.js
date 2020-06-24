@@ -25,9 +25,12 @@ const postNewTrip = (newTrip) => axios.post(`${baseUrl}/trips.json`, newTrip);
 
 const deleteTrip = (tripId) => axios.delete(`${baseUrl}/trips/${tripId}.json`);
 
+const updateTrip = (tripId, updatedTripObj) => axios.put(`${baseUrl}/trips/${tripId}.json`, updatedTripObj);
+
 export default {
   getTripsByUid,
   getSingleTrip,
   postNewTrip,
   deleteTrip,
+  updateTrip,
 };

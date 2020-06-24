@@ -35,17 +35,19 @@ class SingleTrip extends React.Component {
 
   render() {
     const { trip, memories } = this.state;
+    const { tripId } = this.props.match.params;
     const buildMemories = memories.map((mem) => (
         <MemoryCard key={mem.id} memory={mem}/>
     ));
     const newMemoryLink = '/memories/new';
-    const { tripId } = this.props.match.params;
+    const editTripLink = `/trips/edit/${tripId}`;
     return (
       <div className="SingleTrip col-12">
       <h3>{trip.name}</h3>
       <div className="container">
         {buildMemories}
-        <Link className="btn btn-primary" to={{ pathname: newMemoryLink, tripId }}>New Memory +</Link>
+        <Link className="btn btn-primary" to={{ pathname: newMemoryLink, tripId }}>+ New Memory</Link>
+        <Link className="btn btn-light" to={{ pathname: editTripLink, tripId }}>Edit Trip</Link>
         <button className="btn btn-secondary" onClick={this.deleteTripAndMemories}>Delete This Trip</button>
       </div>
       </div>
