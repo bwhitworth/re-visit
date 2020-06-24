@@ -35,7 +35,7 @@ class SingleTrip extends React.Component {
       <h3>{trip.name}</h3>
       <div className="container">
         {buildMemories}
-        <Link className="btn btn-primary" to={{ pathname: newMemoryLink, state: { memoryTripId: tripId } }} tripId={tripId} params={ tripId }>New Memory +</Link>
+        <Link className="btn btn-primary" to={{ pathname: newMemoryLink, tripId }} tripId={tripId} params={ tripId }>New Memory +</Link>
       </div>
       </div>
     );

@@ -12,7 +12,7 @@ class NewMemory extends React.Component {
     memoryLocation: '',
     memoryCategoryId: '',
     memoryNotes: '',
-    memoryTripId: this.props.location.state.memoryTripId,
+    memoryTripId: '',
     // categories: [],
   }
 
@@ -65,7 +65,6 @@ class NewMemory extends React.Component {
       memoryLocation,
       memoryCategoryId,
       memoryNotes,
-      memoryTripId,
     } = this.state;
 
     const newMemory = {
@@ -73,8 +72,8 @@ class NewMemory extends React.Component {
       date: memoryDate,
       location: memoryLocation,
       categoryId: memoryCategoryId,
-      Notes: memoryNotes,
-      tripId: memoryTripId,
+      notes: memoryNotes,
+      tripId: this.props.location.tripId,
       uid: authData.getUid(),
     };
 
@@ -98,7 +97,7 @@ class NewMemory extends React.Component {
       <form className="col-6 offset-3">
       <div className="form-group">
         <label htmlFor="memory-name">Memory Name</label>
-        <input type="text" placeholder="Rockclimbing, Tiki Bar, etc..." className="form-control" id="memory-name" value={memoryName} onChange={this.nameChange} aria-describedby="memNameHelp"/>
+        <input type="text" placeholder="Rock climbing, Tiki Bar, etc..." className="form-control" id="memory-name" value={memoryName} onChange={this.nameChange} aria-describedby="memNameHelp"/>
       </div>
 
       <div className="form-check row" htmlFor="category">
