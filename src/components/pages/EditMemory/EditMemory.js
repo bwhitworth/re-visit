@@ -24,6 +24,8 @@ class EditMemory extends React.Component {
           memoryLocation: memory.location,
           memoryCategoryId: memory.categoryId,
           memoryNotes: memory.notes,
+          memoryTripId: memory.tripId,
+          memoryIsFavorie: memory.isFavorite,
         });
       })
       .catch((err) => console.error('unable to get this memory for editing: ', err));
@@ -74,6 +76,8 @@ class EditMemory extends React.Component {
       memoryLocation,
       memoryCategoryId,
       memoryNotes,
+      memoryTripId,
+      memoryIsFavorie,
     } = this.state;
 
     const updatedMemory = {
@@ -82,6 +86,8 @@ class EditMemory extends React.Component {
       location: memoryLocation,
       categoryId: memoryCategoryId,
       notes: memoryNotes,
+      tripId: memoryTripId,
+      isFavorite: memoryIsFavorie,
       uid: authData.getUid(),
     };
 

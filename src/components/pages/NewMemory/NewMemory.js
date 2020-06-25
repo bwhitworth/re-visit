@@ -13,6 +13,8 @@ class NewMemory extends React.Component {
     memoryCategoryId: '',
     memoryNotes: '',
     memoryTripId: '',
+    memoryImageUrl: '',
+    memoryIsFavorite: false,
     // categories: [],
   }
 
