@@ -72,15 +72,15 @@ class EditTrip extends React.Component {
       <form className="col-6 offset-3">
       <div className="form-group">
         <label htmlFor="trip-name">Trip Name</label>
-        <input type="trip-name" placeholder="Europe, Girl's Trip 2020, etc..." className="form-control" id="trip-name" value={tripName} onChange={this.nameChange} aria-describedby="tripNameHelp"/>
+        <input type="trip-name" className="form-control" id="trip-name" value={tripName} onChange={this.nameChange} aria-describedby="tripNameHelp"/>
       </div>
       <div className="form-group">
         <label htmlFor="trip-start-date">Start Date</label>
-        <input type="trip-start-date" placeholder="MM/DD/YYYY" className="form-control" id="trip-start-date" value={tripStartDate} onChange={this.startDateChange} aria-describedby="tripStartHelp"/>
+        <input type="trip-start-date" className="form-control" id="trip-start-date" value={tripStartDate} onChange={this.startDateChange} aria-describedby="tripStartHelp"/>
       </div>
       <div className="form-group">
         <label htmlFor="trip-end-date">End Date</label>
-        <input type="trip-end-date" placeholder="MM/DD/YYYY" className="form-control" id="trip-end-date" value={tripEndDate} onChange={this.endDateChange} aria-describedby="tripEndHelp"/>
+        <input type="trip-end-date" className="form-control" id="trip-end-date" value={tripEndDate} onChange={this.endDateChange} aria-describedby="tripEndHelp"/>
       </div>
       <button className="btn btn-primary" onClick={this.updateTrip}>Save Changes</button>
     </form>

@@ -13,6 +13,8 @@ class NewMemory extends React.Component {
     memoryCategoryId: '',
     memoryNotes: '',
     memoryTripId: '',
+    memoryImageUrl: '',
+    memoryIsFavorite: false,
     // categories: [],
   }
 
@@ -92,7 +94,7 @@ class NewMemory extends React.Component {
     } = this.state;
 
     return (
-      <div className="NewTrip col-12">
+      <div className="NewMemory col-12">
       <h3>New Memory</h3>
       <form className="col-6 offset-3">
       <div className="form-group">

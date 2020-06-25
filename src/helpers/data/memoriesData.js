@@ -39,10 +39,14 @@ const deleteMemoriesByTripId = (tripId) => new Promise((resolve, reject) => {
     .catch((err) => reject(err));
 });
 
+const updateMemory = (memoryId, updatedMemObj) => axios.put(`${baseUrl}/memories/${memoryId}.json`, updatedMemObj);
+
+
 export default {
   getMemoriesByTripId,
   getSingleMemory,
   postNewMemory,
   deleteMemoriesByTripId,
   deleteSingleMemory,
+  updateMemory,
 };

@@ -47,7 +47,7 @@ class SingleTrip extends React.Component {
       <div className="container">
         {buildMemories}
         <Link className="btn btn-primary" to={{ pathname: newMemoryLink, tripId }}>+ New Memory</Link>
-        <Link className="btn btn-light" to={{ pathname: editTripLink, tripId }}>Edit Trip</Link>
+        <Link className="btn btn-light" to={{ pathname: editTripLink, tripId }}>Edit Details</Link>
         <button className="btn btn-secondary" onClick={this.deleteTripAndMemories}>Delete This Trip</button>
       </div>
       </div>
