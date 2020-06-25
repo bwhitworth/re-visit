@@ -28,13 +28,16 @@ class SingleMemory extends React.Component {
 
   render() {
     const { memory } = this.state;
+    const { memoryId } = this.props.match.params;
     const singleTripLink = `/trips/${memory.tripId}`;
+    const editMemoryLink = `/memories/edit/${memoryId}`;
     return (
       <div className="SingleMemory col-12">
         <h3>{memory.name}</h3>
         <p>{memory.location} - {memory.date}</p>
         <p>{memory.notes}</p>
         <Link className="btn btn-primary" to={singleTripLink}>Go Back</Link>
+        <Link className="btn btn-light" to={editMemoryLink}>Edit Details</Link>
         <button className="btn btn-secondary" onClick={this.deleteMemory}>Delete This Memory</button>
       </div>
     );
