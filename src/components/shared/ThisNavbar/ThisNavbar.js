@@ -55,7 +55,7 @@ class ThisNavbar extends React.Component {
     };
     return (
       <div className="ThisNavbar">
-       <Navbar color="success" light expand="sm">
+       <Navbar className="navbar-custom" expand="sm">
          <NavbarBrand href="/">RE:visit</NavbarBrand>
         <NavbarToggler onClick={this.toggle} />
         <Collapse isOpen={isOpen} navbar>

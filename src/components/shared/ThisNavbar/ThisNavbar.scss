@@ -1,3 +1,27 @@
+@import '../../../styles/variables';
+
+
 .ThisNavbar {
   display: block;
+  background-color: $macaroni;
+
+  .navbar-custom .navbar-brand,
+  .navbar-custom .navbar-text {
+    color: $dusk;
+  }
+
+  .navbar-custom .navbar-brand:hover,
+  .navbar-custom .navbar-text {
+    color: $carolina;
+  }
+
+  .navbar-custom .navbar-nav .nav-link {
+    color: $dusk;
+  }
+
+  .navbar-custom .nav-item.active .nav-link,
+  .navbar-custom .nav-item:focus .nav-link,
+  .navbar-custom .nav-item:hover .nav-link {
+    color: $carolina;
+  }
 }

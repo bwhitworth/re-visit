@@ -1,3 +1,13 @@
+@import '../../../styles/variables';
+
 .TripCard {
   display: block;
+  .custom-card {
+    background-color: $persian;
+    color: $dusk;
+  }
+  .custom-card:hover {
+    color: $ghost;
+    text-decoration: none;
+  }
 }
