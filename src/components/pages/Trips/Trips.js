@@ -30,7 +30,7 @@ class Trips extends React.Component {
     ));
     return (
       <div className="Trips col-12">
-      <h3>My Trips</h3>
+      <h1>My Trips</h1>
       <div className="d-flex flex-wrap col-12">
         {buildTrips}
       </div>

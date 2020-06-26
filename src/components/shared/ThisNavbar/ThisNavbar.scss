@@ -3,25 +3,25 @@
 
 .ThisNavbar {
   display: block;
-  background-color: $macaroni;
+  background-color: $purple;
 
   .navbar-custom .navbar-brand,
   .navbar-custom .navbar-text {
-    color: $dusk;
+    color: $cyan;
   }
 
   .navbar-custom .navbar-brand:hover,
   .navbar-custom .navbar-text {
-    color: $carolina;
+    color: $magenta;
   }
 
   .navbar-custom .navbar-nav .nav-link {
-    color: $dusk;
+    color: $cyan;
   }
 
   .navbar-custom .nav-item.active .nav-link,
   .navbar-custom .nav-item:focus .nav-link,
   .navbar-custom .nav-item:hover .nav-link {
-    color: $carolina;
+    color: $magenta;
   }
 }

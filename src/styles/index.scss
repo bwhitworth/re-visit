@@ -3,5 +3,8 @@
 @import "~@fortawesome/fontawesome-free/css/all.min.css";
 
 body {
-  background-color: $ghost;
+  background-color: $midnight;
+  h1 {
+    color: $persian;
+  }
 }
