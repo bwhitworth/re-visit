@@ -7,4 +7,27 @@ body {
   h1 {
     color: $acid;
   }
+  .custom-button-acid {
+    background-color: $acid;
+    color:$purple;
+  }
+  .custom-button-purple {
+    background-color: $purple;
+    color: $bubblegum;
+  }
+  .custom-button-bubblegum {
+    background-color: $bubblegum;
+    color: $midnight;
+  }
+  .custom-button-cyan {
+    background-color: $cyan;
+    color: $purple;
+  }
+  .mr10 {
+    margin-right: 10px;
+  }
+  .mb10 {
+    margin-right: 10px;
+  }
+  
 }
