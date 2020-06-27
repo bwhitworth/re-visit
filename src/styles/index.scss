@@ -12,6 +12,9 @@ body {
     color: $acid;
     font-family: 'Permanent Marker', cursive;
   }
+  .container {
+    padding: 0;
+  }
   .custom-button-acid {
     background-color: $acid;
     color:$purple;
@@ -40,11 +43,16 @@ body {
   .font-marker {
     font-family: 'Permanent Marker', cursive;
   }
+  .low-pad {
+    padding: 10px;
+  }
   .mb10 {
-    margin-right: 10px;
+    margin-bottom: 10px;
   }
   .mr10 {
     margin-right: 10px;
   }
-  
+  .row {
+    margin: 0;
+  }
 }

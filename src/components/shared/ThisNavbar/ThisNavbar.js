@@ -30,6 +30,12 @@ class ThisNavbar extends React.Component {
     firebase.auth().signOut();
   }
 
+  logUserIn = (e) => {
+    e.preventDefault();
+    const provider = new firebase.auth.GoogleAuthProvider();
+    firebase.auth().signInWithPopup(provider);
+  }
+
   toggle = () => {
     this.setState({ isOpen: !this.state.isOpen });
   }
@@ -54,13 +60,19 @@ class ThisNavbar extends React.Component {
           </Nav>
         );
       }
-      return <Nav className="ml-auto" navbar></Nav>;
+      return (
+        <Nav className="ml-auto" navbar>
+          <NavItem>
+            <NavLink onClick={this.logUserIn}><i class="fas fa-sign-in-alt"></i> Login</NavLink>
+          </NavItem>
+      </Nav>
+      );
     };
     return (
       <div className="ThisNavbar">
        <Navbar className="navbar-custom" expand="sm">
          <NavbarBrand href="/">RE:visit</NavbarBrand>
-        <NavbarToggler onClick={this.toggle} />
+        <NavbarToggler className="navbar-dark" onClick={this.toggle} />
         <Collapse isOpen={isOpen} navbar>
         {buildNavbar()}
         </Collapse>

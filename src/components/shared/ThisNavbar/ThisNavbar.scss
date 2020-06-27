@@ -5,6 +5,11 @@
   display: block;
   background-color: $purple;
 
+  .custom-toggler .navbar-toggler-icon {
+    color: $cyan;
+    border-color: $bubblegum;
+  }
+
   .navbar-custom .navbar-brand,
   .navbar-custom .navbar-text {
     color: $cyan;

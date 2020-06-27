@@ -44,13 +44,13 @@ class SingleTrip extends React.Component {
     return (
       <div className="SingleTrip col-12">
         <h1>{trip.name}</h1>
-        <div className="container flex-wrap row">
+        <Link className="btn custom-button-cyan mb10 mr10 low-pad font-marker" to={{ pathname: newMemoryLink, tripId }}><i class="fas fa-plus"></i> New Memory</Link>
+        <div className="container row flex-wrap">
           {buildMemories}
         </div>
         <div className="containter button-container col-12">
-          <Link className="btn custom-button-acid mr10 font-marker" to={{ pathname: newMemoryLink, tripId }}><i class="fas fa-plus"></i> New Memory</Link>
-          <Link className="btn custom-button-cyan mr10 font-marker" to={{ pathname: editTripLink, tripId }}><i class="far fa-edit"></i> Edit Trip Details</Link>
-          <button className="btn custom-button-purple font-marker" onClick={this.deleteTripAndMemories}><i class="far fa-trash-alt"></i> Delete This Trip</button>
+          <Link className="btn custom-button-acid mb10 mr10 font-marker" to={{ pathname: editTripLink, tripId }}><i class="far fa-edit"></i> Edit Trip Details</Link>
+          <button className="btn custom-button-purple mb10 font-marker" onClick={this.deleteTripAndMemories}><i class="far fa-trash-alt"></i> Delete This Trip</button>
         </div>
       </div>
     );

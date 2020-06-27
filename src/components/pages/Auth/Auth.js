@@ -13,7 +13,7 @@ class Auth extends React.Component {
 
   render() {
     return (
-      <div className="Auth">
+      <div className="Auth col-12">
         <h1>RE:visit</h1>
         <h2 className="font-marker font-cyan">Your travel scrapbook</h2>
         <h4 className="font-bubblegum">RE:visit is designed for capturing special memories from vacations, adventures, and trips.</h4>
