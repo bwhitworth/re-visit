@@ -95,42 +95,42 @@ class NewMemory extends React.Component {
 
     return (
       <div className="NewMemory col-12">
-      <h3>New Memory</h3>
-      <form className="col-6 offset-3">
+      <h1>New Memory</h1>
+      <form className="col-md-6 offset-md-3">
       <div className="form-group">
-        <label htmlFor="memory-name">Memory Name</label>
+        <label className="label-custom font-midnight" htmlFor="memory-name">Memory Name</label>
         <input type="text" placeholder="Rock climbing, Tiki Bar, etc..." className="form-control" id="memory-name" value={memoryName} onChange={this.nameChange} aria-describedby="memNameHelp"/>
       </div>
 
       <div className="form-check row" htmlFor="category">
         <input className="form-check-input" type="radio" name="category" id="category1" onChange={this.categoryChange}/>
-        <label className="form-check-label" htmlFor="FoodDrink">Food & Drink</label>
+        <label className="form-check-label font-bubblegum" htmlFor="FoodDrink">Food & Drink</label>
       </div><div className="form-check row" htmlFor="category">
         <input className="form-check-input" type="radio" name="category" id="category2" onChange={this.categoryChange}/>
-        <label className="form-check-label" htmlFor="Adventure">Adventure</label>
+        <label className="form-check-label font-bubblegum" htmlFor="Adventure">Adventure</label>
         </div><div className="form-check row" htmlFor="category">
         <input className="form-check-input" type="radio" name="category" id="category3" onChange={this.categoryChange}/>
-        <label className="form-check-label" htmlFor="Photo">Photo</label>
+        <label className="form-check-label font-bubblegum" htmlFor="Photo">Photo</label>
         </div><div className="form-check row" htmlFor="category">
         <input className="form-check-input" type="radio" name="category" id="category4" onChange={this.categoryChange}/>
-        <label className="form-check-label" htmlFor="Note">Note</label>
+        <label className="form-check-label font-bubblegum" htmlFor="Note">Note</label>
       </div>
 
       <div className="form-group">
-        <label htmlFor="memory-date">Date</label>
+        <label className="label-custom" htmlFor="memory-date">Date</label>
         <input type="text" placeholder="MM/DD/YYYY" className="form-control" id="memory-date" value={memoryDate} onChange={this.dateChange} aria-describedby="memDateHelp"/>
       </div>
       <div className="form-group">
-        <label htmlFor="memory-location">Location</label>
+        <label className="label-custom" htmlFor="memory-location">Location</label>
         <input type="text" placeholder="place, neighborhood, etc..." className="form-control" id="memory-location" value={memoryLocation} onChange={this.locationChange} aria-describedby="memLocationHelp"/>
       </div>
 
       <div className="form-group">
-        <label htmlFor="memory-notes">Notes</label>
+        <label className="label-custom" htmlFor="memory-notes">Notes</label>
         <input type="text" placeholder="This was awesome because..." className="form-control" id="memory-notes" value={memoryNotes} onChange={this.notesChange} aria-describedby="memNotesHelp"/>
       </div>
 
-      <button type="submit" className="btn btn-primary" onClick={this.saveMemory}>Save</button>
+      <button type="submit" className="btn button-acid" onClick={this.saveMemory}><i className="fas fa-check"></i> Save</button>
     </form>
       </div>
     );

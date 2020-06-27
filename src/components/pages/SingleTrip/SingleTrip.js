@@ -43,13 +43,15 @@ class SingleTrip extends React.Component {
     const editTripLink = `/trips/edit/${tripId}`;
     return (
       <div className="SingleTrip col-12">
-      <h3>{trip.name}</h3>
-      <div className="container">
-        {buildMemories}
-        <Link className="btn btn-primary" to={{ pathname: newMemoryLink, tripId }}>+ New Memory</Link>
-        <Link className="btn btn-light" to={{ pathname: editTripLink, tripId }}>Edit Details</Link>
-        <button className="btn btn-secondary" onClick={this.deleteTripAndMemories}>Delete This Trip</button>
-      </div>
+        <h1>{trip.name}</h1>
+        <Link className="btn button-cyan mb10 mr10 low-pad font-marker" to={{ pathname: newMemoryLink, tripId }}><i className="fas fa-plus"></i> New Memory</Link>
+        <div className="container row flex-wrap">
+          {buildMemories}
+        </div>
+        <div className="container button-container col-12">
+          <Link className="btn button-acid mb10 mr10 font-marker" to={{ pathname: editTripLink, tripId }}><i className="far fa-edit"></i> Edit Trip Details</Link>
+          <button className="btn button-purple mb10 font-marker" onClick={this.deleteTripAndMemories}><i className="far fa-trash-alt"></i> Delete This Trip</button>
+        </div>
       </div>
     );
   }

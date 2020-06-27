@@ -1,3 +1,14 @@
+@import '../../../styles/variables';
+
 .TripCard {
   display: block;
+  margin-bottom: 10px;
+  .custom-card {
+    background-color: $magenta;
+    color: white;
+  }
+  .custom-card:hover {
+    color: $cyan;
+    text-decoration: none;
+  }
 }

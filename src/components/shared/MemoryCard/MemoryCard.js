@@ -13,8 +13,12 @@ class MemoryCard extends React.Component {
     const { memory } = this.props;
     const singleMemLink = `/memories/${memory.id}`;
     return (
-      <div className="row">
-        <Link to={singleMemLink}>{memory.name}</Link>
+      <div className="MemoryCard col-md-6">
+        <Link className="card custom-card" to={singleMemLink}>
+          <div className="card-body">
+            <h3 className="card-title">{memory.name}</h3>
+          </div>
+        </Link>
       </div>
     );
   }

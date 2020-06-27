@@ -1,3 +1,23 @@
+@import '../../../styles/variables';
+
 .MemoryCard {
   display: block;
+
+  .card-body {
+    padding: 10px;
+  }
+
+  .card-title {
+    margin: 0;
+  }
+  .custom-card {
+    background-color: $magenta;
+    color: white;
+    margin-bottom: 10px;
+    padding: 5px;
+  }
+  .custom-card:hover {
+    color: $cyan;
+    text-decoration: none;
+  }
 }

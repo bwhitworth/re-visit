@@ -67,7 +67,7 @@ class App extends React.Component {
           <React.Fragment>
             <ThisNavbar authed={authed}/>
             <div className="container col-12">
-              <div className="row col-12">
+              <div className="col-12">
               <Switch>
                 <PrivateRoute path='/trips/edit/:tripId' component={EditTrip} authed={authed} />
                 <PrivateRoute path='/trips/new' component={NewTrip} authed={authed} />
