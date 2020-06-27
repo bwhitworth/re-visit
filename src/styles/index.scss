@@ -1,11 +1,16 @@
 @import 'variables';
 @import '~bootstrap/dist/css/bootstrap.min.css';
 @import "~@fortawesome/fontawesome-free/css/all.min.css";
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Chettan+2:wght@500&family=Permanent+Marker&display=swap');
+
 
 body {
   background-color: $midnight;
+  color: white;
+  font-family: 'Baloo Chettan 2', sans-serif;
   h1 {
     color: $acid;
+    font-family: 'Permanent Marker', cursive;
   }
   .custom-button-acid {
     background-color: $acid;
@@ -21,12 +26,24 @@ body {
   }
   .custom-button-cyan {
     background-color: $cyan;
-    color: $purple;
+    color: $magenta;
   }
-  .mr10 {
-    margin-right: 10px;
+  .font-baloo {
+    font-family: 'Baloo Chettan 2', sans-serif;
+  }
+  .font-bubblegum {
+    color: $bubblegum;
+  }
+  .font-cyan {
+    color: $cyan;
+  }
+  .font-marker {
+    font-family: 'Permanent Marker', cursive;
   }
   .mb10 {
+    margin-right: 10px;
+  }
+  .mr10 {
     margin-right: 10px;
   }
   

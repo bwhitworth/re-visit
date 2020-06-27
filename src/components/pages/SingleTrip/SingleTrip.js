@@ -48,9 +48,9 @@ class SingleTrip extends React.Component {
           {buildMemories}
         </div>
         <div className="containter button-container col-12">
-          <Link className="btn custom-button-acid mr10" to={{ pathname: newMemoryLink, tripId }}>+ New Memory</Link>
-          <Link className="btn custom-button-cyan mr10" to={{ pathname: editTripLink, tripId }}>Edit Trip Details</Link>
-          <button className="btn custom-button-purple" onClick={this.deleteTripAndMemories}>Delete This Trip</button>
+          <Link className="btn custom-button-acid mr10 font-marker" to={{ pathname: newMemoryLink, tripId }}><i class="fas fa-plus"></i> New Memory</Link>
+          <Link className="btn custom-button-cyan mr10 font-marker" to={{ pathname: editTripLink, tripId }}><i class="far fa-edit"></i> Edit Trip Details</Link>
+          <button className="btn custom-button-purple font-marker" onClick={this.deleteTripAndMemories}><i class="far fa-trash-alt"></i> Delete This Trip</button>
         </div>
       </div>
     );

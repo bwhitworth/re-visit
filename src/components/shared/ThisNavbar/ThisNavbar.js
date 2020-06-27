@@ -48,6 +48,9 @@ class ThisNavbar extends React.Component {
             <NavItem>
               <NavLink tag={RRNavLink} to='/trips/new'><i className="fas fa-map-pin"></i> New Trip</NavLink>
             </NavItem>
+            <NavItem>
+              <NavLink onClick={this.logUserOut}><i class="fas fa-sign-out-alt"></i> Logout</NavLink>
+            </NavItem>
           </Nav>
         );
       }

@@ -14,8 +14,11 @@ class Auth extends React.Component {
   render() {
     return (
       <div className="Auth">
-        <h1>Auth Component</h1>
-        <button className="btn btn-primary" onClick={this.logUserIn}>Google Login</button>
+        <h1>RE:visit</h1>
+        <h2 className="font-marker font-cyan">Your travel scrapbook</h2>
+        <h4 className="font-bubblegum">RE:visit is designed for capturing special memories from vacations, adventures, and trips.</h4>
+        <h4 className="font-bubblegum">Use the Login button below to get started</h4>
+        <button className="btn custom-button-acid" onClick={this.logUserIn}>Login with Google</button>
       </div>
     );
   }
