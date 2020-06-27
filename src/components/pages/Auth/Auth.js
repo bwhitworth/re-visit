@@ -18,7 +18,7 @@ class Auth extends React.Component {
         <h2 className="font-marker font-cyan">Your travel scrapbook</h2>
         <h4 className="font-bubblegum">RE:visit is designed for capturing special memories from vacations, adventures, and trips.</h4>
         <h4 className="font-bubblegum">Use the Login button below to get started</h4>
-        <button className="btn custom-button-acid" onClick={this.logUserIn}>Login with Google</button>
+        <button className="btn button-acid" onClick={this.logUserIn}>Login with Google</button>
       </div>
     );
   }

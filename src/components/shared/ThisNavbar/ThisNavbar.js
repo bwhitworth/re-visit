@@ -55,7 +55,7 @@ class ThisNavbar extends React.Component {
               <NavLink tag={RRNavLink} to='/trips/new'><i className="fas fa-map-pin"></i> New Trip</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink onClick={this.logUserOut}><i class="fas fa-sign-out-alt"></i> Logout</NavLink>
+              <NavLink onClick={this.logUserOut}><i className="fas fa-sign-out-alt"></i> Logout</NavLink>
             </NavItem>
           </Nav>
         );
@@ -63,7 +63,7 @@ class ThisNavbar extends React.Component {
       return (
         <Nav className="ml-auto" navbar>
           <NavItem>
-            <NavLink onClick={this.logUserIn}><i class="fas fa-sign-in-alt"></i> Login</NavLink>
+            <NavLink onClick={this.logUserIn}><i className="fas fa-sign-in-alt"></i> Login</NavLink>
           </NavItem>
       </Nav>
       );

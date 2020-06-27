@@ -68,21 +68,21 @@ class EditTrip extends React.Component {
 
     return (
       <div className="EditTrip col-12">
-      <h3>Edit Trip Details</h3>
-      <form className="col-6 offset-3">
+      <h1 className="font-marker">Edit Trip Details</h1>
+      <form className="col-md-6 offset-md-3">
       <div className="form-group">
-        <label htmlFor="trip-name">Trip Name</label>
-        <input type="trip-name" className="form-control" id="trip-name" value={tripName} onChange={this.nameChange} aria-describedby="tripNameHelp"/>
+        <label className="label-custom" htmlFor="trip-name">Trip Name</label>
+        <input type="trip-name" className="form-control text-center" id="trip-name" value={tripName} onChange={this.nameChange} aria-describedby="tripNameHelp"/>
       </div>
       <div className="form-group">
-        <label htmlFor="trip-start-date">Start Date</label>
-        <input type="trip-start-date" className="form-control" id="trip-start-date" value={tripStartDate} onChange={this.startDateChange} aria-describedby="tripStartHelp"/>
+        <label className="label-custom" htmlFor="trip-start-date">Start Date</label>
+        <input type="trip-start-date" className="form-control text-center" id="trip-start-date" value={tripStartDate} onChange={this.startDateChange} aria-describedby="tripStartHelp"/>
       </div>
       <div className="form-group">
-        <label htmlFor="trip-end-date">End Date</label>
-        <input type="trip-end-date" className="form-control" id="trip-end-date" value={tripEndDate} onChange={this.endDateChange} aria-describedby="tripEndHelp"/>
+        <label className="label-custom" htmlFor="trip-end-date">End Date</label>
+        <input type="trip-end-date" className="form-control text-center" id="trip-end-date" value={tripEndDate} onChange={this.endDateChange} aria-describedby="tripEndHelp"/>
       </div>
-      <button className="btn btn-primary" onClick={this.updateTrip}>Save Changes</button>
+      <button className="btn button-acid" onClick={this.updateTrip}><i className="fas fa-check"></i> Save</button>
     </form>
       </div>
     );

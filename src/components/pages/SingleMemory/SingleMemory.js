@@ -33,12 +33,14 @@ class SingleMemory extends React.Component {
     const editMemoryLink = `/memories/edit/${memoryId}`;
     return (
       <div className="SingleMemory col-12">
-        <h3>{memory.name}</h3>
-        <p>{memory.location} - {memory.date}</p>
-        <p>{memory.notes}</p>
-        <Link className="btn btn-primary" to={singleTripLink}>Go Back</Link>
-        <Link className="btn btn-light" to={editMemoryLink}>Edit Details</Link>
-        <button className="btn btn-secondary" onClick={this.deleteMemory}>Delete This Memory</button>
+        <h1>{memory.name}</h1>
+        <p className="font-bubblegum">{memory.location} - {memory.date}</p>
+        <p className="font-cyan">{memory.notes}</p>
+        <div className="containter button-container col-12">
+          <Link className="btn button-acid mr10 mb10" to={singleTripLink}><i className="fas fa-backward"></i> Go Back</Link>
+          <Link className="btn button-cyan mr10 mb10" to={editMemoryLink}><i className="far fa-edit"></i> Edit Details</Link>
+          <button className="btn button-purple mb10" onClick={this.deleteMemory}><i className="far fa-trash-alt"></i> Delete This Memory</button>
+        </div>
       </div>
     );
   }

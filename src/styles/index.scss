@@ -14,20 +14,24 @@ body {
   }
   .container {
     padding: 0;
+    margin: 0;
   }
-  .custom-button-acid {
+  .button-container {
+    margin: 0;
+  }
+  .button-acid {
     background-color: $acid;
     color:$purple;
   }
-  .custom-button-purple {
+  .button-purple {
     background-color: $purple;
     color: $bubblegum;
   }
-  .custom-button-bubblegum {
+  .button-bubblegum {
     background-color: $bubblegum;
     color: $midnight;
   }
-  .custom-button-cyan {
+  .button-cyan {
     background-color: $cyan;
     color: $magenta;
   }
@@ -43,8 +47,26 @@ body {
   .font-marker {
     font-family: 'Permanent Marker', cursive;
   }
+  .font-midnight {
+    color: $midnight;
+  }
+  .label-custom {
+    color: $acid;
+  }
+  .form-control:focus {
+    background-color: $bubblegum;
+    color: $midnight;
+  }
+  .form-control {
+    background-color:$cyan;
+    color: $midnight;
+    text-align: center;
+  }
   .low-pad {
     padding: 10px;
+  }
+  .pad-zero {
+    padding: 0;
   }
   .mb10 {
     margin-bottom: 10px;
