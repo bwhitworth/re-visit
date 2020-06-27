@@ -3,11 +3,11 @@
 .TripCard {
   display: block;
   .custom-card {
-    background-color: $pink;
+    background-color: $magenta;
     color: white;
   }
   .custom-card:hover {
-    color: $purple;
+    color: $cyan;
     text-decoration: none;
   }
 }
