@@ -1,18 +1,17 @@
 import React from 'react';
-import { FormGroup, Label, FormText } from 'reactstrap';
-// import { DatePicker } from 'reactstrap-date-picker';
+import DatePicker from 'react-datepicker';
+import moment from 'moment';
 
 import authData from '../../../helpers/data/authData';
 import tripsData from '../../../helpers/data/tripsData';
 import './NewTrip.scss';
-
-const DatePicker = require('reactstrap-date-picker');
+import 'react-datepicker/dist/react-datepicker.css';
 
 class NewTrip extends React.Component {
   state = {
     tripName: '',
-    tripStartDate: '',
-    tripEndDate: '',
+    startDate: '',
+    endDate: '',
   }
 
   nameChange = (e) => {
@@ -20,23 +19,22 @@ class NewTrip extends React.Component {
     this.setState({ tripName: e.target.value });
   }
 
-  startDateChange = (e) => {
-    e.preventDefault();
-    this.setState({ tripStartDate: e.target.value });
+  startDateChange = (date) => {
+    this.setState({ startDate: date });
   }
 
-  endDateChange = (e) => {
-    e.preventDefault();
-    this.setState({ tripEndDate: e.target.value });
+  endDateChange = (date) => {
+    this.setState({ endDate: date });
   }
 
   saveTrip = (e) => {
     e.preventDefault();
     const {
       tripName,
-      tripStartDate,
-      tripEndDate,
+      tripStartDate = moment(this.state.startDate).format('MM/DD/YYYY'),
+      tripEndDate = moment(this.state.endDate).format('MM/DD/YYYY'),
     } = this.state;
+
     const newTrip = {
       name: tripName,
       startDate: tripStartDate,
@@ -48,32 +46,9 @@ class NewTrip extends React.Component {
       .catch((err) => console.error('could not post new trip:', err));
   };
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: new Date().toISOString(),
-    };
-  }
-
-  handleChange(value, formattedValue) {
-    this.setState({
-      value, // ISO String, ex: "2016-11-19T12:00:00.000Z"
-      formattedValue, // Formatted String, ex: "11/19/2016"
-    });
-  }
-
-  componentDidUpdate() {
-    // Access ISO String and formatted values from the DOM.
-    const hiddenInputElement = document.getElementById('example-datepicker');
-    console.log(hiddenInputElement.value); // ISO String, ex: "2016-11-19T12:00:00.000Z"
-    console.log(hiddenInputElement.getAttribute('data-formattedvalue')); // Formatted String, ex: "11/19/2016"
-  }
-
   render() {
     const {
       tripName,
-      tripStartDate,
-      tripEndDate,
     } = this.state;
 
     return (
@@ -82,23 +57,32 @@ class NewTrip extends React.Component {
       <form className="col-md-6 offset-md-3">
       <div className="form-group">
         <label className="label-custom" htmlFor="trip-name">Trip Name</label>
-        <input type="trip-name" placeholder="Europe, Girl's Trip 2020, etc..." className="form-control" id="trip-name" value={tripName} onChange={this.nameChange} aria-describedby="tripNameHelp"/>
+        <input type="trip-name" placeholder="Europe, Girl's Trip 2020, etc..."
+        className="form-control" id="trip-name" value={tripName} onChange={this.nameChange} aria-describedby="tripNameHelp"/>
       </div>
+
       <div className="form-group">
         <label className="label-custom" htmlFor="trip-start-date">Start Date</label>
-        <input type="trip-start-date" placeholder="MM/DD/YYYY" className="form-control" id="trip-start-date" value={tripStartDate} onChange={this.startDateChange} aria-describedby="tripStartHelp"/>
+        <br></br>
+        <DatePicker
+        className="picker"
+        selected={this.state.startDate}
+        onChange={this.startDateChange}
+        dateFormat={'MM/dd/yyyy'}
+      />
       </div>
-      <FormGroup>
-        <Label>My Date Picker</Label>
-        <DatePicker id = "example-datepicker"
-                    value = {this.state.value}
-                    onChange= {(v, f) => this.handleChange(v, f)} />
-        <FormText>Help</FormText>
-      </FormGroup>
+
       <div className="form-group">
         <label className="label-custom" htmlFor="trip-end-date">End Date</label>
-        <input type="trip-end-date" placeholder="MM/DD/YYYY" className="form-control" id="trip-end-date" value={tripEndDate} onChange={this.endDateChange} aria-describedby="tripEndHelp"/>
+        <br></br>
+        <DatePicker
+        className="picker"
+        selected={this.state.endDate}
+        onChange={this.endDateChange}
+        dateFormat={'MM/dd/yyyy'}
+      />
       </div>
+
       <button type="submit" className="btn button-acid" onClick={this.saveTrip}><i className="fas fa-check"></i> Save</button>
     </form>
       </div>

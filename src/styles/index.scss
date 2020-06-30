@@ -65,14 +65,35 @@ body {
   .low-pad {
     padding: 10px;
   }
-  .pad-zero {
-    padding: 0;
-  }
   .mb10 {
     margin-bottom: 10px;
   }
   .mr10 {
     margin-right: 10px;
+  }
+  .pad-zero {
+    padding: 0;
+  }
+  .picker {
+    background-color: $cyan;
+  }
+  .picker:focus {
+    background-color: $bubblegum;
+  }
+  .react-datepicker {
+    font-family: 'Baloo Chettan 2', sans-serif;
+    .react-datepicker__header {
+      background-color: $acid;
+    }
+    .react-datepicker__month-container {
+      background-color: $cyan;
+    }
+    .react-datepicker__navigation--next {
+      border-left-color: $purple;
+    }
+    .react-datepicker__navigation--previous {
+      border-right-color: $purple;
+    }
   }
   .row {
     margin: 0;
