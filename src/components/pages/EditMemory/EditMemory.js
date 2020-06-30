@@ -1,8 +1,11 @@
 import React from 'react';
+import DatePicker from 'react-datepicker';
+import moment from 'moment';
 
 import authData from '../../../helpers/data/authData';
 import memoriesData from '../../../helpers/data/memoriesData';
 import './EditMemory.scss';
+import 'react-datepicker/dist/react-datepicker.css';
 
 class EditMemory extends React.Component {
   state = {
@@ -36,9 +39,8 @@ class EditMemory extends React.Component {
     this.setState({ memoryName: e.target.value });
   }
 
-  dateChange = (e) => {
-    e.preventDefault();
-    this.setState({ memoryDate: e.target.value });
+  dateChange = (date) => {
+    this.setState({ memoryDate: date });
   }
 
   locationChange = (e) => {
@@ -82,7 +84,7 @@ class EditMemory extends React.Component {
 
     const updatedMemory = {
       name: memoryName,
-      date: memoryDate,
+      date: moment(memoryDate).format('MM/DD/YYYY'),
       location: memoryLocation,
       categoryId: memoryCategoryId,
       notes: memoryNotes,
@@ -103,6 +105,8 @@ class EditMemory extends React.Component {
       memoryLocation,
       memoryNotes,
     } = this.state;
+
+    const placeholderDate = moment(memoryDate).format('MM/DD/YYYY');
 
     return (
       <div className="EditMemory col-12">
@@ -129,7 +133,13 @@ class EditMemory extends React.Component {
 
       <div className="form-group">
         <label className="label-custom" htmlFor="memory-date">Date</label>
-        <input type="text" placeholder="MM/DD/YYYY" className="form-control" id="memory-date" value={memoryDate} onChange={this.dateChange} aria-describedby="memDateHelp"/>
+        <br></br>
+        <DatePicker
+        className="picker"
+        placeholderText={placeholderDate}
+        onChange={this.dateChange}
+        dateFormat={'MM/dd/yyyy'}
+        />
       </div>
       <div className="form-group">
         <label className="label-custom" htmlFor="memory-location">Location</label>
