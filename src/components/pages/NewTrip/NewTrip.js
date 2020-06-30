@@ -1,14 +1,17 @@
 import React from 'react';
+import DatePicker from 'react-datepicker';
+import moment from 'moment';
 
 import authData from '../../../helpers/data/authData';
 import tripsData from '../../../helpers/data/tripsData';
 import './NewTrip.scss';
+import 'react-datepicker/dist/react-datepicker.css';
 
 class NewTrip extends React.Component {
   state = {
     tripName: '',
-    tripStartDate: '',
-    tripEndDate: '',
+    startDate: '',
+    endDate: '',
   }
 
   nameChange = (e) => {
@@ -16,23 +19,22 @@ class NewTrip extends React.Component {
     this.setState({ tripName: e.target.value });
   }
 
-  startDateChange = (e) => {
-    e.preventDefault();
-    this.setState({ tripStartDate: e.target.value });
+  startDateChange = (date) => {
+    this.setState({ startDate: date });
   }
 
-  endDateChange = (e) => {
-    e.preventDefault();
-    this.setState({ tripEndDate: e.target.value });
+  endDateChange = (date) => {
+    this.setState({ endDate: date });
   }
 
   saveTrip = (e) => {
     e.preventDefault();
     const {
       tripName,
-      tripStartDate,
-      tripEndDate,
+      tripStartDate = moment(this.state.startDate).format('MM/DD/YYYY'),
+      tripEndDate = moment(this.state.endDate).format('MM/DD/YYYY'),
     } = this.state;
+
     const newTrip = {
       name: tripName,
       startDate: tripStartDate,
@@ -47,8 +49,6 @@ class NewTrip extends React.Component {
   render() {
     const {
       tripName,
-      tripStartDate,
-      tripEndDate,
     } = this.state;
 
     return (
@@ -57,16 +57,32 @@ class NewTrip extends React.Component {
       <form className="col-md-6 offset-md-3">
       <div className="form-group">
         <label className="label-custom" htmlFor="trip-name">Trip Name</label>
-        <input type="trip-name" placeholder="Europe, Girl's Trip 2020, etc..." className="form-control" id="trip-name" value={tripName} onChange={this.nameChange} aria-describedby="tripNameHelp"/>
+        <input type="trip-name" placeholder="Europe, Girl's Trip 2020, etc..."
+        className="form-control" id="trip-name" value={tripName} onChange={this.nameChange} aria-describedby="tripNameHelp"/>
       </div>
+
       <div className="form-group">
         <label className="label-custom" htmlFor="trip-start-date">Start Date</label>
-        <input type="trip-start-date" placeholder="MM/DD/YYYY" className="form-control" id="trip-start-date" value={tripStartDate} onChange={this.startDateChange} aria-describedby="tripStartHelp"/>
+        <br></br>
+        <DatePicker
+        className="picker"
+        selected={this.state.startDate}
+        onChange={this.startDateChange}
+        dateFormat={'MM/dd/yyyy'}
+        />
       </div>
+
       <div className="form-group">
         <label className="label-custom" htmlFor="trip-end-date">End Date</label>
-        <input type="trip-end-date" placeholder="MM/DD/YYYY" className="form-control" id="trip-end-date" value={tripEndDate} onChange={this.endDateChange} aria-describedby="tripEndHelp"/>
+        <br></br>
+        <DatePicker
+        className="picker"
+        selected={this.state.endDate}
+        onChange={this.endDateChange}
+        dateFormat={'MM/dd/yyyy'}
+        />
       </div>
+
       <button type="submit" className="btn button-acid" onClick={this.saveTrip}><i className="fas fa-check"></i> Save</button>
     </form>
       </div>
