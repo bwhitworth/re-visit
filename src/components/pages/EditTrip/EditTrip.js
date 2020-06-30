@@ -1,8 +1,11 @@
 import React from 'react';
+import DatePicker from 'react-datepicker';
+import moment from 'moment';
 
 import authData from '../../../helpers/data/authData';
 import tripsData from '../../../helpers/data/tripsData';
 import './EditTrip.scss';
+import 'react-datepicker/dist/react-datepicker.css';
 
 class EditTrip extends React.Component {
   state = {
@@ -30,14 +33,12 @@ class EditTrip extends React.Component {
     this.setState({ tripName: e.target.value });
   }
 
-  startDateChange = (e) => {
-    e.preventDefault();
-    this.setState({ tripStartDate: e.target.value });
+  startDateChange = (date) => {
+    this.setState({ tripStartDate: date });
   }
 
-  endDateChange = (e) => {
-    e.preventDefault();
-    this.setState({ tripEndDate: e.target.value });
+  endDateChange = (date) => {
+    this.setState({ tripEndDate: date });
   }
 
   updateTrip = (e) => {
@@ -50,8 +51,8 @@ class EditTrip extends React.Component {
     } = this.state;
     const updatedTrip = {
       name: tripName,
-      startDate: tripStartDate,
-      endDate: tripEndDate,
+      startDate: moment(tripStartDate).format('MM/DD/YYYY'),
+      endDate: moment(tripEndDate).format('MM/DD/YYYY'),
       uid: authData.getUid(),
     };
     tripsData.updateTrip(tripId, updatedTrip)
@@ -66,6 +67,9 @@ class EditTrip extends React.Component {
       tripEndDate,
     } = this.state;
 
+    const placeholderStartDate = moment(tripStartDate).format('MM/DD/YYYY');
+    const placeholderEndDate = moment(tripEndDate).format('MM/DD/YYYY');
+
     return (
       <div className="EditTrip col-12">
       <h1 className="font-marker">Edit Trip Details</h1>
@@ -76,11 +80,23 @@ class EditTrip extends React.Component {
       </div>
       <div className="form-group">
         <label className="label-custom" htmlFor="trip-start-date">Start Date</label>
-        <input type="trip-start-date" className="form-control text-center" id="trip-start-date" value={tripStartDate} onChange={this.startDateChange} aria-describedby="tripStartHelp"/>
+        <br></br>
+        <DatePicker
+        className="picker"
+        placeholderText={placeholderStartDate}
+        onChange={this.startDateChange}
+        dateFormat={'MM/dd/yyyy'}
+        />
       </div>
       <div className="form-group">
         <label className="label-custom" htmlFor="trip-end-date">End Date</label>
-        <input type="trip-end-date" className="form-control text-center" id="trip-end-date" value={tripEndDate} onChange={this.endDateChange} aria-describedby="tripEndHelp"/>
+        <br></br>
+        <DatePicker
+        className="picker"
+        placeholderText={placeholderEndDate}
+        onChange={this.endDateChange}
+        dateFormat={'MM/dd/yyyy'}
+        />
       </div>
       <button className="btn button-acid" onClick={this.updateTrip}><i className="fas fa-check"></i> Save</button>
     </form>
