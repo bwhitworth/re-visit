@@ -1,9 +1,12 @@
 import React from 'react';
+import DatePicker from 'react-datepicker';
+import moment from 'moment';
 
 import authData from '../../../helpers/data/authData';
 // import categoriesData from '../../../helpers/data/categoriesData';
 import memoriesData from '../../../helpers/data/memoriesData';
 import './NewMemory.scss';
+import 'react-datepicker/dist/react-datepicker.css';
 
 class NewMemory extends React.Component {
   state = {
@@ -29,9 +32,8 @@ class NewMemory extends React.Component {
     this.setState({ memoryName: e.target.value });
   }
 
-  dateChange = (e) => {
-    e.preventDefault();
-    this.setState({ memoryDate: e.target.value });
+  dateChange = (date) => {
+    this.setState({ memoryDate: date });
   }
 
   locationChange = (e) => {
@@ -63,7 +65,6 @@ class NewMemory extends React.Component {
     e.preventDefault();
     const {
       memoryName,
-      memoryDate,
       memoryLocation,
       memoryCategoryId,
       memoryNotes,
@@ -71,7 +72,7 @@ class NewMemory extends React.Component {
 
     const newMemory = {
       name: memoryName,
-      date: memoryDate,
+      date: moment(this.state.memoryDate).format('MM/DD/YYYY'),
       location: memoryLocation,
       categoryId: memoryCategoryId,
       notes: memoryNotes,
@@ -87,7 +88,6 @@ class NewMemory extends React.Component {
   render() {
     const {
       memoryName,
-      memoryDate,
       memoryLocation,
       memoryNotes,
       // categories,
@@ -118,11 +118,18 @@ class NewMemory extends React.Component {
 
       <div className="form-group">
         <label className="label-custom" htmlFor="memory-date">Date</label>
-        <input type="text" placeholder="MM/DD/YYYY" className="form-control" id="memory-date" value={memoryDate} onChange={this.dateChange} aria-describedby="memDateHelp"/>
+        <br></br>
+        <DatePicker
+        className="picker"
+        selected={this.state.memoryDate}
+        onChange={this.dateChange}
+        dateFormat={'MM/dd/yyyy'}
+        />
       </div>
       <div className="form-group">
         <label className="label-custom" htmlFor="memory-location">Location</label>
-        <input type="text" placeholder="place, neighborhood, etc..." className="form-control" id="memory-location" value={memoryLocation} onChange={this.locationChange} aria-describedby="memLocationHelp"/>
+        <input type="text" placeholder="place, neighborhood, etc..." className="form-control"
+        id="memory-location" value={memoryLocation} onChange={this.locationChange} aria-describedby="memLocationHelp"/>
       </div>
 
       <div className="form-group">

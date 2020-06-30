@@ -34,8 +34,8 @@ class SingleMemory extends React.Component {
     return (
       <div className="SingleMemory col-12">
         <h1>{memory.name}</h1>
-        <p className="font-bubblegum">{memory.location} - {memory.date}</p>
-        <p className="font-cyan">{memory.notes}</p>
+        <h4 className="font-bubblegum">{memory.location} - {memory.date}</h4>
+        <h4 className="font-cyan">{memory.notes}</h4>
         <div className="containter button-container col-12">
           <Link className="btn button-acid mr10 mb10" to={singleTripLink}><i className="fas fa-backward"></i> Go Back</Link>
           <Link className="btn button-cyan mr10 mb10" to={editMemoryLink}><i className="far fa-edit"></i> Edit Details</Link>

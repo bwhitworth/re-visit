@@ -59,6 +59,7 @@ body {
   }
   .form-control {
     background-color:$cyan;
+    border: solid 1px $bubblegum;
     color: $midnight;
     text-align: center;
   }
@@ -76,17 +77,21 @@ body {
   }
   .picker {
     background-color: $cyan;
+    border: solid 1px $bubblegum;
+    border-radius: .25rem;
   }
   .picker:focus {
     background-color: $bubblegum;
+    border: solid 1px $bubblegum;
   }
   .react-datepicker {
     font-family: 'Baloo Chettan 2', sans-serif;
+    color: $midnight;
     .react-datepicker__header {
       background-color: $acid;
     }
     .react-datepicker__month-container {
-      background-color: $cyan;
+      background-color: $bubblegum;
     }
     .react-datepicker__navigation--next {
       border-left-color: $purple;

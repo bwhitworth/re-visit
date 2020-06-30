@@ -69,7 +69,7 @@ class NewTrip extends React.Component {
         selected={this.state.startDate}
         onChange={this.startDateChange}
         dateFormat={'MM/dd/yyyy'}
-      />
+        />
       </div>
 
       <div className="form-group">
@@ -80,7 +80,7 @@ class NewTrip extends React.Component {
         selected={this.state.endDate}
         onChange={this.endDateChange}
         dateFormat={'MM/dd/yyyy'}
-      />
+        />
       </div>
 
       <button type="submit" className="btn button-acid" onClick={this.saveTrip}><i className="fas fa-check"></i> Save</button>
