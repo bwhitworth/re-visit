@@ -68,7 +68,7 @@ class SingleTrip extends React.Component {
         <h1>{trip.name}</h1>
         <h4 className="font-bubblegum">{trip.startDate} - {trip.endDate}</h4>
         <Link className="btn button-cyan mb10 mr10 low-pad font-marker" to={{ pathname: newMemoryLink, tripId }}><i className="fas fa-plus"></i> New Memory</Link>
-        <div className="container row flex-wrap">
+        <div className="container row flex-wrap col-12">
           {buildMemories}
         </div>
         <div className="container button-container col-12">
