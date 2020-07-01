@@ -5,7 +5,7 @@
 - [x] React - *Creation and Routing*
 - [x] Firebase - *Authentication, Database, and Hosting*
 - [x] Github - *Version Control and Project Planning*
-- [x] Display comprehension and mastery of technologies from the first 6 months of developer bootcamp
+- [x] Display comprehension and mastery of technologies from the first 6 months of frontend developer bootcamp
 
 ### Technologies Used:
 > - [HTML5](https://developer.mozilla.org/en-US/docs/Web/HTML)
