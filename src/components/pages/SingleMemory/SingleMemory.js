@@ -1,8 +1,10 @@
 import React from 'react';
+import { confirmAlert } from 'react-confirm-alert';
 import { Link } from 'react-router-dom';
 
 import memoriesData from '../../../helpers/data/memoriesData';
 import './SingleMemory.scss';
+import 'react-confirm-alert/src/react-confirm-alert.css';
 
 class SingleMemory extends React.Component {
   state = {
@@ -26,6 +28,22 @@ class SingleMemory extends React.Component {
       .catch((err) => console.error('could not delete this memory:', err));
   };
 
+  submit = () => {
+    confirmAlert({
+      title: 'Delete?',
+      message: 'Are you sure you want to do this?',
+      buttons: [
+        {
+          label: 'Yes',
+          onClick: this.deleteMemory,
+        },
+        {
+          label: 'No',
+        },
+      ],
+    });
+  };
+
   render() {
     const { memory } = this.state;
     const { memoryId } = this.props.match.params;
@@ -39,7 +57,7 @@ class SingleMemory extends React.Component {
         <div className="containter button-container col-12">
           <Link className="btn button-acid mr10 mb10" to={singleTripLink}><i className="fas fa-backward"></i> Go Back</Link>
           <Link className="btn button-cyan mr10 mb10" to={editMemoryLink}><i className="far fa-edit"></i> Edit Details</Link>
-          <button className="btn button-purple mb10" onClick={this.deleteMemory}><i className="far fa-trash-alt"></i> Delete This Memory</button>
+          <button className="btn button-purple mb10" onClick={this.submit}><i className="far fa-trash-alt"></i> Delete This Memory</button>
         </div>
       </div>
     );
