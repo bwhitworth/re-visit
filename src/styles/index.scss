@@ -8,6 +8,7 @@ body {
   background-color: $midnight;
   color: white;
   font-family: 'Baloo Chettan 2', sans-serif;
+  
   h1 {
     color: $acid;
     font-family: 'Permanent Marker', cursive;
@@ -76,6 +77,7 @@ body {
     padding: 0;
   }
   .picker {
+    text-align: center;
     background-color: $cyan;
     border: solid 1px $bubblegum;
     border-radius: .25rem;
@@ -83,6 +85,26 @@ body {
   .picker:focus {
     background-color: $bubblegum;
     border: solid 1px $bubblegum;
+  }
+  .react-confirm-alert-body {
+    background-color: $purple;
+    color: $ghost;
+    font-family: 'Baloo Chettan 2', sans-serif;
+    text-align: center;
+    .react-confirm-alert-button-group {
+      justify-content: space-evenly;
+    }
+    button {
+      background-color: $cyan;
+      color: $midnight;
+    }
+    button:hover {
+      background-color: $magenta;
+      color: $ghost;
+    }
+  }
+  .react-confirm-alert-overlay {
+    background-color: $midnight-fade;
   }
   .react-datepicker {
     font-family: 'Baloo Chettan 2', sans-serif;

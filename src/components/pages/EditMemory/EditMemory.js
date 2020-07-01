@@ -143,7 +143,8 @@ class EditMemory extends React.Component {
       </div>
       <div className="form-group">
         <label className="label-custom" htmlFor="memory-location">Location</label>
-        <input type="text" placeholder="place, neighborhood, etc..." className="form-control" id="memory-location" value={memoryLocation} onChange={this.locationChange} aria-describedby="memLocationHelp"/>
+        <input type="text" placeholder="place, neighborhood, etc..." className="form-control"
+        id="memory-location" value={memoryLocation} onChange={this.locationChange} aria-describedby="memLocationHelp"/>
       </div>
 
       <div className="form-group">

@@ -121,7 +121,7 @@ class NewMemory extends React.Component {
         <br></br>
         <DatePicker
         className="picker"
-        selected={this.state.memoryDate}
+        placeholderText={'click here to select'}
         onChange={this.dateChange}
         dateFormat={'MM/dd/yyyy'}
         />

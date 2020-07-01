@@ -1,11 +1,14 @@
 import React from 'react';
+import { confirmAlert } from 'react-confirm-alert';
 import { Link } from 'react-router-dom';
 
-import './SingleTrip.scss';
+import MemoryCard from '../../shared/MemoryCard/MemoryCard';
+
 import tripsData from '../../../helpers/data/tripsData';
 import memoriesData from '../../../helpers/data/memoriesData';
 
-import MemoryCard from '../../shared/MemoryCard/MemoryCard';
+import './SingleTrip.scss';
+import 'react-confirm-alert/src/react-confirm-alert.css';
 
 class SingleTrip extends React.Component {
   state = {
@@ -33,6 +36,23 @@ class SingleTrip extends React.Component {
       .catch((err) => console.error('could not delete trip:', err));
   };
 
+  submit = () => {
+    const { trip } = this.state;
+    confirmAlert({
+      title: 'Wait a second...',
+      message: `You want to delete "${trip.name}" and all its memories?`,
+      buttons: [
+        {
+          label: 'Yes, delete it',
+          onClick: this.deleteTripAndMemories,
+        },
+        {
+          label: 'Never mind',
+        },
+      ],
+    });
+  };
+
   render() {
     const { trip, memories } = this.state;
     const { tripId } = this.props.match.params;
@@ -50,7 +70,7 @@ class SingleTrip extends React.Component {
         </div>
         <div className="container button-container col-12">
           <Link className="btn button-acid mb10 mr10 font-marker" to={{ pathname: editTripLink, tripId }}><i className="far fa-edit"></i> Edit Trip Details</Link>
-          <button className="btn button-purple mb10 font-marker" onClick={this.deleteTripAndMemories}><i className="far fa-trash-alt"></i> Delete This Trip</button>
+          <button className="btn button-purple mb10 font-marker" onClick={this.submit}><i className="far fa-trash-alt"></i> Delete This Trip</button>
         </div>
       </div>
     );
