@@ -29,16 +29,17 @@ class SingleMemory extends React.Component {
   };
 
   submit = () => {
+    const { memory } = this.state;
     confirmAlert({
-      title: 'Delete?',
-      message: 'Are you sure you want to do this?',
+      title: 'Wait a second...',
+      message: `You want to delete "${memory.name}"?`,
       buttons: [
         {
-          label: 'Yes',
+          label: 'Yes, delete it',
           onClick: this.deleteMemory,
         },
         {
-          label: 'No',
+          label: 'Never mind',
         },
       ],
     });
@@ -55,9 +56,9 @@ class SingleMemory extends React.Component {
         <h4 className="font-bubblegum">{memory.location} - {memory.date}</h4>
         <h4 className="font-cyan">{memory.notes}</h4>
         <div className="containter button-container col-12">
-          <Link className="btn button-acid mr10 mb10" to={singleTripLink}><i className="fas fa-backward"></i> Go Back</Link>
-          <Link className="btn button-cyan mr10 mb10" to={editMemoryLink}><i className="far fa-edit"></i> Edit Details</Link>
-          <button className="btn button-purple mb10" onClick={this.submit}><i className="far fa-trash-alt"></i> Delete This Memory</button>
+          <Link className="btn button-acid mr10 mb10 font-marker" to={singleTripLink}><i className="fas fa-backward"></i> Go Back</Link>
+          <Link className="btn button-cyan mr10 mb10 font-marker" to={editMemoryLink}><i className="far fa-edit"></i> Edit Details</Link>
+          <button className="btn button-purple mb10 font-marker" onClick={this.submit}><i className="far fa-trash-alt"></i> Delete This Memory</button>
         </div>
       </div>
     );
