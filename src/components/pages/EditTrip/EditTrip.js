@@ -51,8 +51,8 @@ class EditTrip extends React.Component {
     } = this.state;
     const updatedTrip = {
       name: tripName,
-      startDate: moment(tripStartDate).format('MM/DD/YYYY'),
-      endDate: moment(tripEndDate).format('MM/DD/YYYY'),
+      startDate: moment(tripStartDate).format('MMMM D, YYYY'),
+      endDate: moment(tripEndDate).format('MMMM D, YYYY'),
       uid: authData.getUid(),
     };
     tripsData.updateTrip(tripId, updatedTrip)

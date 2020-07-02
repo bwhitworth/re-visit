@@ -16,6 +16,15 @@ class EditMemory extends React.Component {
     memoryNotes: '',
   }
 
+  checkExistingCategory = (categoryId) => {
+    const categoryButtons = document.getElementsByName('category');
+    for (let i = 0, { length } = categoryButtons; i < length; i += 1) {
+      if (categoryButtons[i].id === categoryId) {
+        document.getElementById(`${categoryButtons[i].id}`).setAttribute('checked', 'checked');
+      }
+    }
+  };
+
   componentDidMount() {
     const memIdToEdit = this.props.match.params.memoryId;
     memoriesData.getSingleMemory(memIdToEdit)
@@ -30,6 +39,7 @@ class EditMemory extends React.Component {
           memoryTripId: memory.tripId,
           memoryIsFavorie: memory.isFavorite,
         });
+        this.checkExistingCategory(memory.categoryId);
       })
       .catch((err) => console.error('unable to get this memory for editing: ', err));
   }
@@ -84,7 +94,7 @@ class EditMemory extends React.Component {
 
     const updatedMemory = {
       name: memoryName,
-      date: moment(memoryDate).format('MM/DD/YYYY'),
+      date: moment(memoryDate).format('MMMM D, YYYY'),
       location: memoryLocation,
       categoryId: memoryCategoryId,
       notes: memoryNotes,
@@ -102,11 +112,13 @@ class EditMemory extends React.Component {
     const {
       memoryName,
       memoryDate,
+      memoryCategoryId,
       memoryLocation,
       memoryNotes,
     } = this.state;
 
     const placeholderDate = moment(memoryDate).format('MM/DD/YYYY');
+    const existingCategory = 'checked';
 
     return (
       <div className="EditMemory col-12">
@@ -127,7 +139,7 @@ class EditMemory extends React.Component {
         <input className="form-check-input" type="radio" name="category" id="category3" onChange={this.categoryChange}/>
         <label className="form-check-label font-bubblegum" htmlFor="Photo">Photo</label>
         </div><div className="form-check row" htmlFor="category">
-        <input className="form-check-input" type="radio" name="category" id="category4" onChange={this.categoryChange}/>
+        <input className="form-check-input" type="radio" name="category" id="category4" onChange={this.categoryChange} />
         <label className="form-check-label font-bubblegum" htmlFor="Note">Note</label>
       </div>
 
