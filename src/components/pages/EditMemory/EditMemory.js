@@ -84,7 +84,7 @@ class EditMemory extends React.Component {
 
     const updatedMemory = {
       name: memoryName,
-      date: moment(memoryDate).format('MM/DD/YYYY'),
+      date: moment(memoryDate).format('MMMM D, YYYY'),
       location: memoryLocation,
       categoryId: memoryCategoryId,
       notes: memoryNotes,
