@@ -43,10 +43,12 @@ class SingleTrip extends React.Component {
       message: `You want to delete "${trip.name}" and all its memories?`,
       buttons: [
         {
+          className: 'confirm-btn-yes',
           label: 'Yes, delete it',
           onClick: this.deleteTripAndMemories,
         },
         {
+          className: 'confirm-btn-no',
           label: 'Never mind',
         },
       ],
@@ -64,8 +66,9 @@ class SingleTrip extends React.Component {
     return (
       <div className="SingleTrip col-12">
         <h1>{trip.name}</h1>
+        <h4 className="font-bubblegum">{trip.startDate} - {trip.endDate}</h4>
         <Link className="btn button-cyan mb10 mr10 low-pad font-marker" to={{ pathname: newMemoryLink, tripId }}><i className="fas fa-plus"></i> New Memory</Link>
-        <div className="container row flex-wrap">
+        <div className="container row flex-wrap col-12">
           {buildMemories}
         </div>
         <div className="container button-container col-12">

@@ -98,9 +98,16 @@ body {
       background-color: $cyan;
       color: $midnight;
     }
-    button:hover {
+    .confirm-btn-yes {
+      background-color: $acid;
+      color: $midnight;
+    }
+    .confirm-btn-no {
       background-color: $magenta;
       color: $ghost;
+    }
+    h1 {
+      color: $cyan;
     }
   }
   .react-confirm-alert-overlay {
