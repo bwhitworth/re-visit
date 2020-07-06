@@ -11,6 +11,7 @@ class EditMemory extends React.Component {
   state = {
     memoryName: '',
     memoryDate: '',
+    memoryImageUrl: '',
     memoryLocation: '',
     memoryCategoryId: '',
     memoryNotes: '',
@@ -33,6 +34,7 @@ class EditMemory extends React.Component {
         this.setState({
           memoryName: memory.name,
           memoryDate: memory.date,
+          memoryImageUrl: memory.imageUrl,
           memoryLocation: memory.location,
           memoryCategoryId: memory.categoryId,
           memoryNotes: memory.notes,
@@ -47,6 +49,11 @@ class EditMemory extends React.Component {
   nameChange = (e) => {
     e.preventDefault();
     this.setState({ memoryName: e.target.value });
+  }
+
+  imageChange = (e) => {
+    e.preventDefault();
+    this.setState({ memoryImageUrl: e.target.value });
   }
 
   dateChange = (date) => {
@@ -85,6 +92,7 @@ class EditMemory extends React.Component {
     const {
       memoryName,
       memoryDate,
+      memoryImageUrl,
       memoryLocation,
       memoryCategoryId,
       memoryNotes,
@@ -95,6 +103,7 @@ class EditMemory extends React.Component {
     const updatedMemory = {
       name: memoryName,
       date: moment(memoryDate).format('MMMM D, YYYY'),
+      imageUrl: memoryImageUrl,
       location: memoryLocation,
       categoryId: memoryCategoryId,
       notes: memoryNotes,
@@ -112,13 +121,12 @@ class EditMemory extends React.Component {
     const {
       memoryName,
       memoryDate,
-      memoryCategoryId,
+      memoryImageUrl,
       memoryLocation,
       memoryNotes,
     } = this.state;
 
     const placeholderDate = moment(memoryDate).format('MM/DD/YYYY');
-    const existingCategory = 'checked';
 
     return (
       <div className="EditMemory col-12">
@@ -153,6 +161,13 @@ class EditMemory extends React.Component {
         dateFormat={'MM/dd/yyyy'}
         />
       </div>
+
+      <div className="form-group">
+        <label className="label-custom" htmlFor="memory-imageUrl">Image Url</label>
+        <input type="text" placeholder="paste your image url here" className="form-control"
+        id="memory-imageUrl" value={memoryImageUrl} onChange={this.imageChange} aria-describedby="memImageHelp"/>
+      </div>
+
       <div className="form-group">
         <label className="label-custom" htmlFor="memory-location">Location</label>
         <input type="text" placeholder="place, neighborhood, etc..." className="form-control"

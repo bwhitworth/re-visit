@@ -16,5 +16,11 @@
     "startDate": "12/31/2017",
     "endDate": "01/04/2018",
     "uid": "12345"
+  },
+  "trip4": {
+    "name": "Family Reunion Trip 2020",
+    "startDate": "06/15/2020",
+    "endDate": "06/18/2020",
+    "uid": "eRjnvX92KmausfPVnrYUWL5MyD33"
   }
 }

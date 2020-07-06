@@ -55,7 +55,8 @@ class SingleMemory extends React.Component {
         <h1>{memory.name}</h1>
         <h4 className="font-bubblegum">{memory.location} - {memory.date}</h4>
         <h4 className="font-cyan">{memory.notes}</h4>
-        <div className="containter button-container col-12">
+        <img className="col-sm-6" src={memory.imageUrl} alt="memory"/>
+        <div className="containter button-container col-12"><br/>
           <Link className="btn button-acid mr10 mb10 font-marker" to={singleTripLink}><i className="fas fa-backward"></i> Go Back</Link>
           <Link className="btn button-cyan mr10 mb10 font-marker" to={editMemoryLink}><i className="far fa-edit"></i> Edit Details</Link>
           <button className="btn button-purple mb10 font-marker" onClick={this.submit}><i className="far fa-trash-alt"></i> Delete This Memory</button>
