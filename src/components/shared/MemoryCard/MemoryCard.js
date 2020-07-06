@@ -20,10 +20,10 @@ class MemoryCard extends React.Component {
               <h3>
               {(() => {
                 switch (this.props.memory.categoryId) {
-                  case 'category1': return <i class="fas fa-utensils"></i>;
-                  case 'category2': return <i class="fas fa-hiking"></i>;
-                  case 'category3': return <i class="fas fa-camera"></i>;
-                  default: return <i class="far fa-comment-dots"></i>;
+                  case 'category1': return <i className="fas fa-utensils"></i>;
+                  case 'category2': return <i className="fas fa-hiking"></i>;
+                  case 'category3': return <i className="fas fa-camera"></i>;
+                  default: return <i className="far fa-comment-dots"></i>;
                 }
               })()}
               </h3>

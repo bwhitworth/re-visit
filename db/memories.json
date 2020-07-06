@@ -86,5 +86,27 @@
     "notes": "hottest tub on Earth...",
     "isFavorite": false,
     "uid": "eRjnvX92KmausfPVnrYUWL5MyD33"
+  },
+  "memory9": {
+    "tripId": "trip4",
+    "categoryId": "category1",
+    "name": "Picnic",
+    "location": "Birchwood Park",
+    "date": "06/16/2020",
+    "imageUrl": "https://blog.genealogybank.com/wp-content/uploads/2014/05/photo-0506-2014-picnic-table-food.png",
+    "notes": "Someone forgot the hotdog buns, so we cut them in half and ate them like hamburgers.  Except for Grandma Judy.",
+    "isFavorite": false,
+    "uid": "eRjnvX92KmausfPVnrYUWL5MyD33"
+  },
+  "memory10": {
+    "tripId": "trip4",
+    "categoryId": "category2",
+    "name": "Whitewater Rafting",
+    "location": "Allegra River Falls",
+    "date": "06/16/2020",
+    "imageUrl": "https://az837918.vo.msecnd.net/publishedimages/articles/3107/en-CA/images/1/a-family-whitewater-rafting-adventure-L-1.jpg",
+    "notes": "Class 1. Didn't even get wet.",
+    "isFavorite": false,
+    "uid": "eRjnvX92KmausfPVnrYUWL5MyD33"
   }
 }
