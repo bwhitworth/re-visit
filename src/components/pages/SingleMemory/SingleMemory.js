@@ -35,10 +35,12 @@ class SingleMemory extends React.Component {
       message: `You want to delete "${memory.name}"?`,
       buttons: [
         {
+          className: 'confirm-btn-yes',
           label: 'Yes, delete it',
           onClick: this.deleteMemory,
         },
         {
+          className: 'confirm-btn-no',
           label: 'Never mind',
         },
       ],

@@ -79,11 +79,11 @@
   "memory8": {
     "tripId": "trip2",
     "categoryId": "category3",
-    "name": "Inman Oasis",
-    "location": "Inman Square",
+    "name": "Casablanca Cafe",
+    "location": "beachfront",
     "date": "08/03/2019",
-    "imageUrl": "https://patch.com/img/cdn/users/38168/2011/03/raw/d06e280983e866170d17bf1a3ced509b.jpg?width=695",
-    "notes": "hottest tub on Earth...",
+    "imageUrl": "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fmyfortlauderdalebeach.com%2Fwp-content%2Fuploads%2Fcbc1.png&f=1&nofb=1",
+    "notes": "awesome pineapple mules",
     "isFavorite": false,
     "uid": "eRjnvX92KmausfPVnrYUWL5MyD33"
   },
