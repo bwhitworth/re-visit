@@ -3,7 +3,6 @@ import DatePicker from 'react-datepicker';
 import moment from 'moment';
 
 import authData from '../../../helpers/data/authData';
-// import categoriesData from '../../../helpers/data/categoriesData';
 import memoriesData from '../../../helpers/data/memoriesData';
 import './NewMemory.scss';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -11,21 +10,14 @@ import 'react-datepicker/dist/react-datepicker.css';
 class NewMemory extends React.Component {
   state = {
     memoryName: '',
-    memoryDate: '',
+    memoryDate: '01/01/2000',
+    memoryImageUrl: '',
     memoryLocation: '',
     memoryCategoryId: '',
     memoryNotes: '',
     memoryTripId: '',
-    memoryImageUrl: '',
     memoryIsFavorite: false,
-    // categories: [],
   }
-
-  // componentDidMount() {
-  //   categoriesData.getCategories()
-  //     .then((catsArray) => this.setState({ categories: catsArray }))
-  //     .catch((err) => console.error('could not get categories upon mount', err));
-  // }
 
   nameChange = (e) => {
     e.preventDefault();
@@ -34,6 +26,11 @@ class NewMemory extends React.Component {
 
   dateChange = (date) => {
     this.setState({ memoryDate: date });
+  }
+
+  imageChange = (e) => {
+    e.preventDefault();
+    this.setState({ memoryImageUrl: e.target.value });
   }
 
   locationChange = (e) => {
@@ -65,6 +62,7 @@ class NewMemory extends React.Component {
     e.preventDefault();
     const {
       memoryName,
+      memoryImageUrl,
       memoryLocation,
       memoryCategoryId,
       memoryNotes,
@@ -73,6 +71,7 @@ class NewMemory extends React.Component {
     const newMemory = {
       name: memoryName,
       date: moment(this.state.memoryDate).format('MM/DD/YYYY'),
+      imageUrl: memoryImageUrl,
       location: memoryLocation,
       categoryId: memoryCategoryId,
       notes: memoryNotes,
@@ -88,10 +87,13 @@ class NewMemory extends React.Component {
   render() {
     const {
       memoryName,
+      memoryDate,
+      memoryImageUrl,
       memoryLocation,
       memoryNotes,
-      // categories,
     } = this.state;
+
+    const placeholderDate = moment(memoryDate).format('MM/DD/YYYY');
 
     return (
       <div className="NewMemory col-12">
@@ -121,11 +123,18 @@ class NewMemory extends React.Component {
         <br></br>
         <DatePicker
         className="picker"
-        placeholderText={'click here to select'}
+        placeholderText={placeholderDate}
         onChange={this.dateChange}
         dateFormat={'MM/dd/yyyy'}
         />
       </div>
+
+      <div className="form-group">
+        <label className="label-custom" htmlFor="memory-imageUrl">Image Url</label>
+        <input type="text" placeholder="paste your image url here" className="form-control"
+        id="memory-imageUrl" value={memoryImageUrl} onChange={this.imageChange} aria-describedby="memImageHelp"/>
+      </div>
+
       <div className="form-group">
         <label className="label-custom" htmlFor="memory-location">Location</label>
         <input type="text" placeholder="place, neighborhood, etc..." className="form-control"
