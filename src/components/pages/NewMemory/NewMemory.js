@@ -10,7 +10,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 class NewMemory extends React.Component {
   state = {
     memoryName: '',
-    memoryDate: '01/01/2000',
+    memoryDate: '',
     memoryImageUrl: '',
     memoryLocation: '',
     memoryCategoryId: '',
@@ -62,6 +62,7 @@ class NewMemory extends React.Component {
     e.preventDefault();
     const {
       memoryName,
+      memoryDate,
       memoryImageUrl,
       memoryLocation,
       memoryCategoryId,
@@ -70,7 +71,7 @@ class NewMemory extends React.Component {
 
     const newMemory = {
       name: memoryName,
-      date: moment(this.state.memoryDate).format('MM/DD/YYYY'),
+      date: moment(memoryDate).format('MM/DD/YYYY'),
       imageUrl: memoryImageUrl,
       location: memoryLocation,
       categoryId: memoryCategoryId,
