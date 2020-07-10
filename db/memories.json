@@ -5,7 +5,7 @@
     "name": "Russell House",
     "location": "Cambridge",
     "date": "08/03/2019",
-    "imageUrl": "",
+    "imageUrl": "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fbeantownbelly.com%2Fwp-content%2Fuploads%2F2012%2F02%2FIMG_1762.jpg&f=1&nofb=1",
     "notes": "Drinks at the bar.  BEST Bloody Mary EVER (pickle). Embarrassing guy who spilled his drink.",
     "isFavorite": false,
     "uid": "eRjnvX92KmausfPVnrYUWL5MyD33"
@@ -16,7 +16,7 @@
     "name": "Inman Oasis",
     "location": "Cambridge",
     "date": "08/03/2019",
-    "imageUrl": "",
+    "imageUrl": "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fs3-media3.ak.yelpcdn.com%2Fbphoto%2F0-fvGdaEytTN09Kn_6SqiA%2Fl.jpg&f=1&nofb=1",
     "notes": "45 mins hot tub that was too hot, hippies, EO soap",
     "isFavorite": false,
     "uid": "eRjnvX92KmausfPVnrYUWL5MyD33"
@@ -27,7 +27,7 @@
     "name": "Meadhall",
     "location": "Kendall Square",
     "date": "08/02/2019",
-    "imageUrl": "",
+    "imageUrl": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fs3-media2.fl.yelpcdn.com%2Fbphoto%2FJNQRA5OFWmGJfdCmBJwouw%2F348s.jpg&f=1&nofb=1",
     "notes": "HUGE plate of poutine fries, great sour beer",
     "isFavorite": false,
     "uid": "eRjnvX92KmausfPVnrYUWL5MyD33"
@@ -38,7 +38,7 @@
     "name": "Walking Around Inman Square",
     "location": "Inman Square",
     "date": "08/03/2019",
-    "imageUrl": "",
+    "imageUrl": "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fcentersandsquares.com%2Fwp-content%2Fuploads%2F2010%2F12%2FInman-Square-Cambridge.jpg&f=1&nofb=1",
     "notes": "Too hot after Inman Oasis hot tub, so we walked around and looked at stuff. Saw that guy steal from CVS.",
     "isFavorite": false,
     "uid": "eRjnvX92KmausfPVnrYUWL5MyD33"
@@ -49,7 +49,7 @@
     "name": "The Drunken Taco",
     "location": "beachfront",
     "date": "12/26/2019",
-    "imageUrl": "",
+    "imageUrl": "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fdrunken-taco.com%2Ftaco-content%2Fuploads%2F2013%2F02%2Ffront2a.jpg&f=1&nofb=1",
     "notes": "\"House of 301 Tequilas\", here almost every day for jumbo margaritas and people watching",
     "isFavorite": false,
     "uid": "eRjnvX92KmausfPVnrYUWL5MyD33"
@@ -71,7 +71,7 @@
     "name": "Sushi Place",
     "location": "Vegas Strip",
     "date": "01/02/2018",
-    "imageUrl": "",
+    "imageUrl": "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Flasvegastoppicks.com%2Fwp-content%2Fuploads%2F2014%2F07%2FEntrance-Sushi-Roku-Caesars-Palace-Las-Vegas1.jpg&f=1&nofb=1",
     "notes": "it was gross but we ate it anyway",
     "isFavorite": false,
     "uid": "12345"
@@ -79,11 +79,11 @@
   "memory8": {
     "tripId": "trip2",
     "categoryId": "category3",
-    "name": "Inman Oasis",
-    "location": "Inman Square",
+    "name": "Casablanca Cafe",
+    "location": "beachfront",
     "date": "08/03/2019",
-    "imageUrl": "https://patch.com/img/cdn/users/38168/2011/03/raw/d06e280983e866170d17bf1a3ced509b.jpg?width=695",
-    "notes": "hottest tub on Earth...",
+    "imageUrl": "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fmyfortlauderdalebeach.com%2Fwp-content%2Fuploads%2Fcbc1.png&f=1&nofb=1",
+    "notes": "awesome pineapple mules",
     "isFavorite": false,
     "uid": "eRjnvX92KmausfPVnrYUWL5MyD33"
   },
