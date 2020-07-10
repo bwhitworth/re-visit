@@ -163,8 +163,8 @@ class EditMemory extends React.Component {
       </div>
 
       <div className="form-group">
-        <label className="label-custom" htmlFor="memory-imageUrl">Image Url</label>
-        <input type="text" placeholder="paste your image url here" className="form-control"
+        <label className="label-custom" htmlFor="memory-imageUrl">Image URL</label>
+        <input type="text" placeholder="paste your image URL here" className="form-control"
         id="memory-imageUrl" value={memoryImageUrl} onChange={this.imageChange} aria-describedby="memImageHelp"/>
       </div>
 
